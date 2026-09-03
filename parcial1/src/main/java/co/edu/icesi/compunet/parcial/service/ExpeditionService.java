@@ -23,8 +23,31 @@ public class ExpeditionService {
         if (expedition.getName() == null || expedition.getName().isBlank()) throw new IllegalArgumentException("El nombre de la expedicion es obligatorio");
 
         if (expeditionRepository.findById(expedition.getId()).isPresent()) throw new IllegalArgumentException("Ya existe una expedicion con este ID llamado " + expedition.getId());
+        
+        if (expedition.getCode().length() > 20) throw new IllegalArgumentException("El codigo de expedicion no puede superar los 20 caracteres (recibidos: " + expedition.getCode().length() + ")");
+           
+        if (expedition.getCode().length() < 5) throw new IllegalArgumentException("El codigo de expedicion no puede ser menor a 5 caracteres (recibidos: " + expedition.getCode().length() + ")");
 
         return expeditionRepository.save(expedition);
+
+    }
+
+
+    public List<Expedition> findAll() {
+
+        return expeditionRepository.findAll();
+
+    }
+
+    public Optional<Expedition> findById(Integer id) {
+
+        return expeditionRepository.findById(id);
+
+    }
+
+    public int count() {
+
+        return expeditionRepository.findAll().size();
 
     }
     

@@ -32,7 +32,7 @@ public class SightingRepository {
 
     }
 
-    public List<Sighting> findByAssetId(Integer assetId){
+    public List<Sighting> findById(Integer assetId){
 
         if (assetId == null) return new ArrayList<>();
 
