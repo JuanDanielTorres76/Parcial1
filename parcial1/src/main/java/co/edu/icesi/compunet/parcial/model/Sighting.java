@@ -103,5 +103,13 @@ public class Sighting {
     public void setExpeditionId(Integer expeditionId) {
         ExpeditionId = expeditionId;
     }
+
+    public Sighting(){
+
+    }
+
+    public Sighting(){
+        
+    }
     
 }

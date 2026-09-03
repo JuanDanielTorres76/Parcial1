@@ -8,7 +8,7 @@ public class Expedition{
 
     private String Name;
 
-    private Sting Code;
+    private String Code;
 
     private String Region;
 
@@ -92,6 +92,59 @@ public class Expedition{
 
     public void setEstate(String estate) {
         Estate = estate;
+    }
+
+    public Expedition(){
+
+    }
+
+    public Expedition(Integer Id, String Name, String Code, String Region, String BaseCamp, String Leader, String StartDate, String EndDate, String Estate){
+
+        this.Id = Id;
+        
+        this.Name = Name;
+        
+        this.Code = Code;
+        
+        this.Region = Region;
+        
+        this.BaseCamp = BaseCamp;
+        
+        this.Leader = Leader;
+        
+        this.StartDate = StartDate;
+        
+        this.EndDate = EndDate;
+        
+        this.Estate = Estate;
+
+    }
+
+    @Override
+    public boolean equals(Object o){
+        
+        if(this == o){ return true;}
+
+        if(o == null || getClass() != o.getClass()){ return false;}
+
+        Expedition otro = (Expedition) o;
+
+        return id != null && id.equals(otro.getId());
+
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(id);
+
+    }
+
+    @Override
+    public String toString(){
+
+        return "Expedición{" + "id=" + Id + ", Nombre" + Name + ", Codigo" + Code + ", Region" + Region + ", Lider" + Leader + ", Base" + BaseCamp + ", Fecha comienzo "  + StartDate + ", Fecha finalizacion "  + EndDate + ", Estado" + Estate + "}";
+
     }
 
 }
