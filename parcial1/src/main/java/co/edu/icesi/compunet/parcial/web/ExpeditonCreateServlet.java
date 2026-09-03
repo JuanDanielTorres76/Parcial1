@@ -80,18 +80,20 @@ public class ExpeditonCreateServlet extends HttpServlet {
 
     }
 
-        @Override
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        String SightingCode = request.getParameter("SightingCode");
+        
+        String id = request.getParameter("id");
         
         String name = request.getParameter("name");
 
         String code = request.getParameter("code");
 
+        String SightingCode = request.getParameter("SightingCode");
+
         try{
 
-            ExpeditionService.create("id", String SightingCode, String name, String Description, String ScientificName, String SightedAt, String Location, Integer Quantity, Integer ConfidenceLevel, Integer ExpeditionId);
+            ExpeditionService.create(name, SightingCode, code, SightingCode, String ScientificName, String SightedAt, String Location, Integer Quantity, Integer ConfidenceLevel, Integer ExpeditionId);
 
             response.sendRedirect(request.getContextPath() + "/artists");
 
