@@ -38,11 +38,11 @@ public class Expedition{
         Name = name;
     }
 
-    public Sting getCode() {
+    public String getCode() {
         return Code;
     }
 
-    public void setCode(Sting code) {
+    public void setCode(String code) {
         Code = code;
     }
 
@@ -129,14 +129,14 @@ public class Expedition{
 
         Expedition otro = (Expedition) o;
 
-        return id != null && id.equals(otro.getId());
+        return Id   != null && Id.equals(otro.getId());
 
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(id);
+        return Objects.hash(Id);
 
     }
 

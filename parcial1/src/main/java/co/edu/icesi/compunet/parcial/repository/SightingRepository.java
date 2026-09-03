@@ -39,7 +39,7 @@ public class SightingRepository {
         List<Sighting> resultado = new ArrayList<>();
 
         for (Sighting m : sightings.values()) {
-            if (assetId.equals(m.getAssetId())) {
+            if (assetId.equals(m.getId())) {
                 resultado.add(m);
             }
         }

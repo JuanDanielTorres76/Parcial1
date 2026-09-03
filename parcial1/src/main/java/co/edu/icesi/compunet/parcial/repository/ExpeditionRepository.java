@@ -32,7 +32,7 @@ public class ExpeditionRepository {
 
     }
 
-    public Expedition<Device> findById(Integer id){
+    public Optional<Expedition> findById(Integer id){
 
         if(id == null){return Optional.empty();}
 
