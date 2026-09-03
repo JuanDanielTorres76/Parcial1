@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class Sighting {
 
-     private Integer id; 
+    private Integer id; 
 
     private String SightingCode;
 
@@ -23,6 +23,29 @@ public class Sighting {
     private Integer ConfidenceLevel;
 
     private Integer ExpeditionId;
+
+    public Sighting(Integer id, String sightingCode, String name, String description, String scientificName, String sightedAt, String location, Integer quantity, Integer confidenceLevel, Integer expeditionId) {
+        
+        this.id = id;
+        
+        this.SightingCode = sightingCode;
+        
+        this.name = name;
+        
+        this.Description = description;
+        
+        this.ScientificName = scientificName;
+        
+        this.SightedAt = sightedAt;
+        
+        this.Location = location;
+        
+        this.Quantity = quantity;
+        
+        this.ConfidenceLevel = confidenceLevel;
+        
+        this.ExpeditionId = expeditionId;
+    }
 
     public Integer getId() {
         return id;
@@ -108,8 +131,32 @@ public class Sighting {
 
     }
 
-    public Sighting(){
+    @Override
+    public boolean equals(Object o){
         
+        if(this == o){ return true;}
+
+        if(o == null || getClass() != o.getClass()){ return false;}
+
+        Sighting otro = (Sighting) o;
+
+        return id != null && id.equals(otro.getId());
+
     }
+
+     @Override
+    public int hashCode() {
+
+        return Objects.hash(id);
+
+    }
+
+     @Override
+     public String toString() {
+        return "Sighting [id=" + id + ", SightingCode=" + SightingCode + ", name=" + name + ", Description="
+                + Description + ", ScientificName=" + ScientificName + ", SightedAt=" + SightedAt + ", Location="
+                + Location + ", Quantity=" + Quantity + ", ConfidenceLevel=" + ConfidenceLevel + ", ExpeditionId="
+                + ExpeditionId + "]";
+     }
     
 }
